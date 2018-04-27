@@ -11,7 +11,7 @@
     <div class="search-content" ref="search" v-show="keyword">
       <ul>
         <li
-          class="search-item border-bottom"
+          class="search-item border-bottom needsclick"
           v-for="item of list"
           :key="item.id"
           @click="handleCityClick(item.name)"
@@ -75,7 +75,9 @@ export default {
     }
   },
   mounted () {
-    this.scroll = new Bscroll(this.$refs.search)
+    this.scroll = new Bscroll(this.$refs.search, {
+      click: true
+    })
   }
 }
 </script>
